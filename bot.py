@@ -19,6 +19,7 @@ async def on_ready():
 
 #здесь мы пишем ответы бота на ранее заданные фразы
 async def on_message(message):
+	await client.process_commands(message)
 	msg = message.content.lower()
 	if msg in hello_Words:
 		await message.channel.send('Привет. Чо надо?')
